@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+
+<!-- <bean id="square" class="sakshi.spring.square">
+<property name="pointA" ref="zeroPoint"/>
+<property name="pointB" ref="point2"/>
+<property name="pointC" ref="point3"/>
+<property name="pointD" ref="point4"/>
+
+</bean>
+ -->
+<!--  <bean id="rectangle" class="sakshi.spring.rectangle"> -->
+<!--  <property name="points"> -->
+<!--  <list> -->
+<!--  <ref bean="zeroPoint"/> -->
+<!--  <ref bean="point2"/> -->
+<!--  <ref bean="point3"/> -->
+<!--  <ref bean="point4"/> -->
+ 
+<!--  </list> -->
+<!--  </property> -->
+ 
+<!--  </bean> -->
+<!-- <bean id="zeroPoint" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="3"></property> -->
+<!-- <property name="y" value="4"></property> -->
+<!-- </bean> -->
+
+<!-- <bean id="point2" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="-3"/> -->
+<!-- <property name="y" value="4"/> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="point3" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="-2"></property> -->
+<!-- <property name="y" value="-4"></property> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="point4" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="3"></property> -->
+<!-- <property name="y" value="-4"></property> -->
+<!-- </bean> -->
+
+<!--  <bean id="square" class="sakshi.spring.square" autowire="byName"> -->
+<!--  </bean> -->
+ 
+<!--  <bean id="pointA" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="3"></property> -->
+<!-- <property name="y" value="4"></property> -->
+<!-- </bean> -->
+
+<!-- <bean id="pointB" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="-3"/> -->
+<!-- <property name="y" value="4"/> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="pointC" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="-2"></property> -->
+<!-- <property name="y" value="-4"></property> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="pointD" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="3"></property> -->
+<!-- <property name="y" value="-4"></property> -->
+<!-- </bean> -->
+ 
+ 
+ 
+<!--   <bean id="circle" class="sakshi.spring.circle" autowire="byName"> -->
+<!--  </bean> -->
+ 
+<!--  <bean id="pointA" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="3"></property> -->
+<!-- <property name="y" value="4"></property> -->
+<!-- </bean> -->
+
+<!-- <bean id="pointB" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="-3"/> -->
+<!-- <property name="y" value="4"/> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="pointC" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="-2"></property> -->
+<!-- <property name="y" value="-4"></property> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="pointD" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="3"></property> -->
+<!-- <property name="y" value="-4"></property> -->
+<!-- </bean> -->
+ 
+ 
+<!--   <bean id="parentnewsquare" class="sakshi.spring.newsquare"> -->
+<!--   <property name="pointA" ref="pointA"></property> -->
+<!--  </bean> -->
+ 
+<!--   <bean id="newsquare1" class="sakshi.spring.newsquare" parent="parentnewsquare"> -->
+<!--   <property name="pointB" ref="pointB"></property> -->
+<!--    <property name="pointC" ref="pointC"></property> -->
+<!--     <property name="pointD" ref="pointD"></property> -->
+<!--  </bean> -->
+ 
+<!--   <bean id="newsquare2" class="sakshi.spring.newsquare" parent="parentnewsquare"> -->
+<!--   <property name="pointB" ref="pointB"></property> -->
+<!--  </bean> -->
+ 
+ 
+<!--  <bean id="pointA" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="3"></property> -->
+<!-- <property name="y" value="4"></property> -->
+<!-- </bean> -->
+
+<!-- <bean id="pointB" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="-3"/> -->
+<!-- <property name="y" value="4"/> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="pointC" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="-2"></property> -->
+<!-- <property name="y" value="-4"></property> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="pointD" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="3"></property> -->
+<!-- <property name="y" value="-4"></property> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="parentrectangle" class="sakshi.spring.rectangle" abstract="true"> -->
+<!--   <property name="points"> -->
+<!--   <list> -->
+<!--   <ref bean="pointA"/> -->
+  
+<!--   </list> -->
+<!--   </property> -->
+<!--  </bean> -->
+ 
+<!--   <bean id="rectangle1" class="sakshi.spring.newsquare" parent="parentrectangle"> -->
+<!--    <property name="points"> -->
+<!--   <list merge="true"> -->
+<!--   <ref  bean="pointB"/> -->
+  
+<!--   </list> -->
+<!--   </property> -->
+<!--  </bean> -->
+ 
+<!--   <bean id="rectangle2" class="sakshi.spring.newsquare" parent="parentrectangle"> -->
+<!--   <property name="pointB" ref="pointB"></property> -->
+<!--  </bean> -->
+ 
+ 
+<!--  <bean id="pointA" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="3"></property> -->
+<!-- <property name="y" value="4"></property> -->
+<!-- </bean> -->
+
+<!-- <bean id="pointB" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="-3"/> -->
+<!-- <property name="y" value="4"/> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="pointC" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="-2"></property> -->
+<!-- <property name="y" value="-4"></property> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="pointD" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="3"></property> -->
+<!-- <property name="y" value="-4"></property> -->
+<!-- </bean> -->
+ 
+
+<!--   <bean id="lyfcyle" class="sakshi.spring.lyfcyle" autowire="byName" init-method="myInit" destroy-method="cleanup">  -->
+<!--  </bean>  -->
+<!--  <bean id="pointA" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="3"/> -->
+<!-- <property name="y" value="4"/> -->
+<!-- </bean> -->
+  
+
+<!-- <bean id="pointB" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="-3"/> -->
+<!-- <property name="y" value="4"/> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="pointC" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="-2"></property> -->
+<!-- <property name="y" value="-4"></property> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="pointD" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="3"></property> -->
+<!-- <property name="y" value="-4"></property> -->
+<!-- </bean> -->
+
+<!--   <bean id="square" class="sakshi.spring.square"> -->
+<!-- <property name="pointA" ref="pointA"/> -->
+<!-- <property name="pointB" ref="pointB"/> -->
+<!-- <property name="pointC" ref="pointC"/> -->
+<!-- <property name="pointD" ref="pointD"/> -->
+
+<!-- </bean> -->
+<!--  <bean id="pointA" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="$(pointA.pointX)"></property> -->
+<!-- <property name="y" value="$(pointA.pointY)"></property> -->
+<!-- </bean> -->
+
+<!-- <bean id="pointB" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="-3"/> -->
+<!-- <property name="y" value="4"/> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="pointC" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="-2"></property> -->
+<!-- <property name="y" value="-4"></property> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="pointD" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="3"></property> -->
+<!-- <property name="y" value="-4"></property> -->
+<!-- </bean> -->
+<!--  <bean class="sakshi.spring.beanfactoypp"/> -->
+<!--  <bean class="org.springframework.beans.factory.congig.Property.Placeholder.Congigurer"> -->
+<!--  <property name="locations" value="pointscongig.properties"/> -->
+<!--  </bean> -->
+ 
+ 
+<!--    <bean id="square" class="sakshi.spring.square"> -->
+<!-- <property name="pointA" ref="pointA"/> -->
+<!-- <property name="pointB" ref="pointB"/> -->
+<!-- <property name="pointC" ref="pointC"/> -->
+<!-- <property name="pointD" ref="pointD"/> -->
+
+<!-- </bean> -->
+ <bean id="pointA" class="sakshi.spring.point">
+
+<property name="x" value="3"></property>
+<property name="y" value="4"></property>
+</bean>
+
+<!-- <bean id="pointB" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="-3"/> -->
+<!-- <property name="y" value="4"/> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="pointC" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="-2"></property> -->
+<!-- <property name="y" value="-4"></property> -->
+<!-- </bean> -->
+
+
+<!-- <bean id="pointD" class="sakshi.spring.point"> -->
+<!-- <property name="x" value="3"></property> -->
+<!-- <property name="y" value="-4"></property> -->
+<!-- </bean> -->
+
+   <bean id="circlee" class="sakshi.spring.circlee">
+   </bean>
+   
+
+<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
+
+ 
+</beans>
