@@ -1,6 +1,9 @@
+
+
 package com.niit.controller;
 
 import java.util.List;
+import java.io.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.niit.dao.CategoryDAO;
 import com.niit.model.Category;
+
+
+
 
 @Controller
 public class CategoryController {
@@ -59,14 +65,15 @@ public class CategoryController {
 		
 		List<Category> listCategories=categoryDAO.listCategories();
 		m.addAttribute("categoryList",listCategories);
-		m.addAttribute("CategoryInfo",category);
+		m.addAttribute("categoryInfo",category);
 		return "UpdateCategory";
 	
 }
-	@RequestMapping(value="/updateCategory",method=RequestMethod.POST)
-	public String updateCategory(@RequestParam("catid")int categoryid,@RequestParam("catname")String catname,@RequestParam("catdesc")String catdesc,Model m) {
+	@RequestMapping(value="/UpdateCategory",method=RequestMethod.POST)
+	public String updateCategory(@RequestParam("catid")String categoryId,@RequestParam("catname")String catname,@RequestParam("catdesc")String catdesc,Model m)
+	{
 		
-	
+		int categoryid=Integer.parseInt(categoryId);
 		Category category=(Category)categoryDAO.getCategory(categoryid);
 		category.setCategoryname(catname);
 		category.setCategorydesc(catdesc);

@@ -45,7 +45,7 @@ public class CategoryDAOTest {
 	
 @Test
 public void deleteCategoryTest() {
-	Category category=categoryDAO.getCategory(18);
+	Category category=categoryDAO.getCategory(68);
 	
 	assertTrue("problem in delerting",categoryDAO.deleteCategory(category));
 }

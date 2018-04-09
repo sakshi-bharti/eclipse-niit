@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.model.Product;
-import com.niit.model.Supplier;
+
 
 public class ProductDAOImpl implements ProductDAO {
 	@Autowired
@@ -19,7 +19,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 	public boolean addProduct(Product product) {
 	try {
-		sessionFactory.getCurrentSession().save(product);
+		sessionFactory.getCurrentSession().saveOrUpdate(product);
 		return true;
 	}catch(Exception e) {
 		System.out.println("exception arised"+e);
@@ -40,7 +40,7 @@ public class ProductDAOImpl implements ProductDAO {
 	
 	public List<Product> listproducts() {
 		Session session=sessionFactory.openSession();
-		Query query=(Query)session.createQuery("from Supplier");
+		Query query=(Query)session.createQuery("from Product");
 		List<Product> listproducts=query.list();
 		session.close();
 		return listproducts;

@@ -9,16 +9,16 @@
 <title>UpdateCategory</title>
 </head>
 <body>
-<h3 align="center">  this is category page</h3>
-<form action= "<c:url value="/UpdateCategory"/>" method="post">
+<h3 align="center">  this is product edit page</h3>
+<form action= "<c:url value="/UpdateProduct"/>" method="post">
 <table align ="center"></table>
-<table>
-<tr><td colspan="2">Edit category</td></tr>
+<table align="center">
+<tr><td colspan="2">Edit Product</td></tr>
 <tr>
-<td> category Id</td>
-<td><input type="text" readonly name="catid" id="catid" value="${categoryInfo.categoryid}"/></td>
-<td> category Name</td>
-<td><input type="text" name="catname" id="catdesc" value="${categoryInfo.categoryname}"/></td>
+<td> product Id</td>
+<td><input type="text" readonly name="productId" id="productId" value="${productInfo.productId}"/></td>
+<td> product Name</td>
+<td><input type="text" name="productName" id="" value="${categoryInfo.categoryname}"/></td>
 </tr>
 <tr bgcolor="pink">
 <td>Category Desc</td>
@@ -58,6 +58,7 @@
 
 </c:forEach>
 </table>
+
 
 </body>
 </html>

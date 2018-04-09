@@ -1,5 +1,3 @@
-
-
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
@@ -12,11 +10,19 @@
 </servlet-mapping>
 <context_param>
 <param-name>contextConfigLocation</param-name>
-<param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
+<param-value>/WEB-INF/dispatcher-servlet.xml,/WEB-INF/SecurityImpl.xml</param-value>
 </context_param>
 <listner>
 <listner-class>org.springframework.web.context.ContextLoaderListner
 </listner-class>
 </listner>
+<filter>
+<filter-name>springSecurityFilterChain</filter-name>
+<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+</filter>
+<filter-mapping>
+<filter-name>springSecurityFilterChain</filter-name>
+<yrl-pattern>/*</yrl-pattern>
+</filter-mapping>
 </web-app>
 

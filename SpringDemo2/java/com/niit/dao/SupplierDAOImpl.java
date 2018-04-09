@@ -5,11 +5,11 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.junit.Ignore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.model.Supplier;
+
 
 public class SupplierDAOImpl implements SupplierDAO {
 	@Autowired
