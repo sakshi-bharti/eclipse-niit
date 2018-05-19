@@ -43,19 +43,21 @@ background-color:orange;
       <li><a href="#">Home</a>
       <li><a href="Category">Category</a></li>
       <li><a href="Product">Product</a></li>
-      
+      <li><a href="logout">logout</a></li>
       </ul>
       </c:if>
       <c:if test="${sessionScope.role=='ROLE_USER' }">
       <ul class="nav navbar-nav">
       <li><a href="#">Home</a>
+      <li><a href="Cart">${cartsize}</a><span class="glyphicon glyphicon-shopping-cart"></span></li>
+      <li><a href="logout">logout</a></li>
       </ul>
       </c:if>
       </c:if>
       </div>
 </nav>
 </div>
-<center><h1>header page.</h1>
+<center>
 <a href="Login">Login</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 <a href="Register">Register</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 <a href="Signup">Signup</a>&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -64,6 +66,7 @@ background-color:orange;
 <a href="Category">Category </a>&nbsp;&nbsp;|&nbsp;&nbsp;
 <a href="Supplier">Supplier </a>&nbsp;&nbsp;|&nbsp;&nbsp;
 <a href="Product">Product </a>&nbsp;&nbsp;|&nbsp;&nbsp;
+
 </center>
 </body>
 </html>

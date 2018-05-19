@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cart Page</title>
+<title>order Page</title>
 <style type="text/css">
 table {
     border-collapse: collapse;
@@ -28,12 +28,13 @@ input {
 </head>
 <body>
 <div class="container">
-<h1 id="grad1">Shopping Cart</h1>
+<h1 id="grad1">Your Order </h1>
 <div class="row my-4">
 <div class="col-lg-4">
 
 </div>
 <div class="col-lg-8">
+<form action="proceed" method="post">
 <div style="overflow-x:auto;">
   <table class="table table-hover">
  <tr>
@@ -53,19 +54,24 @@ input {
 				<td><input type="text" value="${cartItem.quantity}" name="quantity"/></td>
 				<td>${cartItem.price}</td>
 				<td>${cartItem.price*cartitem.quantity}</td>
-				<td>
-				<button type="submit" value="update" class="btn btn-block">Update</button> 
-		<a href="<c:url value="/deleteCartItem/${cartItem.cartItemId}"/>" class="btn btn-block">Delete</a>
-				</td>	</tr></form>				
+				</tr></form>				
 			</c:forEach>
-				<tr bgcolor="olive">
+			
 				<tr>
-    	<td colspan="3">Total Amount</td>
-    	<td colspan="2">${totalAmount}/-</td>
+    	<td colspan="4">Total Amount</td>
+    	<td >${totalAmount}/-</td>
+    </tr>
+     <br>
+    <tr>
+    	<td>Select Your Mode Of Payment</td>
+    	<td><input type="radio" name="pmode" value="COD"/>Cash On Delivery</td>
+    	<td><input type="radio" name="pmode" value="NB"/>Net Banking</td>
+    	<td><input type="radio" name="pmode" value="CC"/>Credit Card</td>
+    	<td><input type="radio" name="pmode" value="DC"/>Debit Card</td>
     </tr>
     <tr>
-    	<td colspan="3"><a href="<c:url value="/UserHome"/>" class="btn btn-default btn-block">Continue Shopping</a></td>
-    	<td colspan="2"><a href="<c:url value="/CheckOut"/>" class="btn btn-danger btn-block">Check Out</a></td>
+    	<td colspan="3"><a href="<c:url value="/Cart"/>" class="btn btn-default btn-block">Edit Order</a></td>
+    	<td colspan="2"><input type="submit" value="PAY NOW" class="btn btn-info btn-block"/></td>
     </tr>
 			</table>
 			</div>

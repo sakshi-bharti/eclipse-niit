@@ -1,7 +1,5 @@
 package com.niit.controller;
 
-
-
 import java.util.Collection;
 import java.util.List;
 
@@ -17,65 +15,75 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.niit.dao.ProductDAO;
 import com.niit.model.Product;
+import com.niit.dao.*;
 
 @Controller
 public class LoginController {
+
 	@Autowired
 	ProductDAO productDAO;
 	
-	@RequestMapping(value="/login_success" ,method=RequestMethod.POST)
-	public String loginsuccess(HttpSession session,Model m){
+	@RequestMapping(value="/welcome")
+	public String loginpage(Model m,HttpSession session) {
 		String page=null;
-		
 		boolean loggedIn=false;
 		
-		SecurityContext securityContext = SecurityContextHolder.getContext();
-		Authentication authentication=securityContext.getAuthentication();
-		System.out.println("login-success");
-		//System.out.println(authentication.getName());
-		//--> Retriving UserName
-		String username=authentication.getName();
+		SecurityContext securitycontext = SecurityContextHolder.getContext();
+		Authentication authentication = securitycontext.getAuthentication();
 		
-		//-->Retriving Role
-		Collection<GrantedAuthority> roles=(Collection<GrantedAuthority>)authentication.getAuthorities();
-		for(GrantedAuthority role:roles)
-		{
-			session.setAttribute("role", role.getAuthority());
+		String username = authentication.getName();
+		//Return all roles
+		Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>)authentication.getAuthorities();
+		
+		for(GrantedAuthority role: authorities) {
+			
+			session.setAttribute("role",role.getAuthority());
 			System.out.println(role.getAuthority());
-			if(role.getAuthority().equals("ROLE_ADMIN"))
-			{
-				loggedIn=true;
-				page="AdminHome";
-				session.setAttribute("loggedIn", loggedIn);
-				session.setAttribute("username", username);
-
-	
+			if(role.getAuthority().equals("ROLE_USER")) {
+					loggedIn=true;
+					page = "UserHome";
+					session.setAttribute("loggedIn", loggedIn);
+					session.setAttribute("username", username);
+					List<Product> listproducts=productDAO.listproducts();
+					   m.addAttribute("listProducts",listproducts);
+					
+					
 			}
-			else
-			{
-				loggedIn=true;
-				page="UserHome";
-				session.setAttribute("loggedIn", loggedIn);
-				session.setAttribute("username", username);
-				List<Product> listproducts=productDAO.listproducts();
-			    m.addAttribute("listproducts",listproducts);
+			else {
+					loggedIn=true;
+					page = "AdminHome";
+					session.setAttribute("username", username);
+					session.setAttribute("loggedIn", loggedIn);
+				
 			}
 		}
-
-return page;
+		return page;
 	}
-	@RequestMapping("/perform_login")
-	public String performlogin(HttpSession session,Model m) {
+	
+	@RequestMapping(value="/login", method=RequestMethod.GET)
+	public String login() {
+		return "Login";
+	}
+	
+	@RequestMapping(value="/loginfailed",method=RequestMethod.GET)
+	public String loginerror() {
+		return "Login";
+	}
+	
+	@RequestMapping(value="/logout",method=RequestMethod.GET)
+	public String logoutpage() {
 		
-	String page="AdminHome";
-
-	return page;
+		return "index";
+	}	
+	
+	@RequestMapping(value="/UserHome")
+		
+	public String showUserHome(Model m)
+	{
+		List<Product> listproducts=productDAO.listproducts();
+		   m.addAttribute("listProducts",listproducts);
+		return "UserHome";
+	}
 	}
 	
-	
-	
-	
-}
-

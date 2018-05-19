@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.niit.dao.SupplierDAO;
+import com.niit.model.Category;
 import com.niit.model.Supplier;
 
 
@@ -64,15 +65,19 @@ public class SupplierController {
 		return "UpdateSupplier";
 	
 }
-	@RequestMapping(value="/updateSupplier",method=RequestMethod.POST)
-	public String updateSupplier(@RequestParam("supplierId")int categoryid,@RequestParam("supname")String supname,@RequestParam("supaddr")String supaddr,Model m) {
+	@RequestMapping(value="/UpdateSupplier",method=RequestMethod.POST)
+	public String updateSupplier(@RequestParam("supid")String supplierId,@RequestParam("supname")String supname,@RequestParam("supaddr")String supaddr,Model m) {
 		
-		Supplier supplier=new Supplier();
+		int supplierid=Integer.parseInt(supplierId);
+		Supplier supplier=(Supplier)supplierDAO.getSupplier(supplierid);
+		
+		
+
 		supplier.setSupplierName(supname);
 		supplier.setSupplierAddrs(supaddr);
 		supplierDAO.updateSupplier(supplier);
 		
-		
+	
 		List<Supplier> listSuppliers=supplierDAO.listSuppliers();
 	    m.addAttribute("supplierList",listSuppliers);
 	

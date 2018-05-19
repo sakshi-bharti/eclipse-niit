@@ -10,7 +10,7 @@
 <title>category</title>
 </head>
 <body>
-<h3 align="center">  this is category page</h3>
+<h3 align="center">   category page</h3>
 <form action="InsertCategory" method="post">
 <table align ="center"></table>
 <table>

@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.niit.dao.CategoryDAO;
 import com.niit.dao.ProductDAO;
@@ -31,6 +30,7 @@ public class ProductController {
 	
 	@RequestMapping("/Product")
 	public String showProductPage(Model m) {
+	
 		
 		Product product=new Product();
 		m.addAttribute(product);
@@ -130,16 +130,17 @@ public class ProductController {
 		return categoryList;
 	}
 		
-		@RequestMapping(value="/productDesc/{productId}")
-		public String shoeProductDesc(@PathVariable("productId")int productId,Model m)
+		@RequestMapping(value="/ProductDesc/{productId}")
+		public String showProductDesc(@PathVariable("productId")int productId,Model m)
 		{
 			Product product=productDAO.getProduct(productId);
-			m.addAttribute("Product",product);
+			m.addAttribute("product",product);
 			return "ProductDesc";
 			
 		}
 		
 	}
 	
+
 
 

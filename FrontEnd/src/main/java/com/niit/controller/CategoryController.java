@@ -83,6 +83,7 @@ public class CategoryController {
 		m.addAttribute("categoryList",listCategories);
 		
 		
+	
 		return"Category";
 	}
 	

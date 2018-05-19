@@ -6,7 +6,7 @@
    <table class="table">
    <tr>
    <td rowspan="9">
-   <img src="<c:url value="/resources/images${product.productId}.jpg"/>"/>
+   <img src="<c:url value="/resources/images/${product.productId}.jpg"/>"/>
    </td>
    </tr>
    <tr>
@@ -33,7 +33,7 @@
    <td>Stock</td>
    <td>${product.stock}</td>
    </tr>
-   <form action="<c:url value="/addTOCart/${product.productId}"/>" method="get">
+   <form action="<c:url value="/addToCart/${product.productId}"/>" method="get">
       <tr>
    <td>Quantity</td>
    <td><select name="quantity" class="form-control btn-block">

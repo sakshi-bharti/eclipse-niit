@@ -10,13 +10,13 @@
 </head>
 <body>
 <h3 align="center">  this is supplier page</h3>
-<form action="InsertSupplier" method="post">
+<form action= "<c:url value="/UpdateSupplier"/>" method="post">
 <table align ="center"></table>
 <table>
 <tr><td colspan="2">Supplier Detail</td></tr>
 <tr>
 <td> Supplier Id</td>
-<td><input type="text" readonly id="supid" id="supid" value="${supplierInfo.supplierId }"/></td>
+<td><input type="text" readonly name="supid" id="supid" value="${supplierInfo.supplierId }"/></td>
 <td> Supplier Name</td>
 <td><input type="text" name="supname" id="supaddr" value="${supplierInfo.supplierName }"/></td>
 </tr>

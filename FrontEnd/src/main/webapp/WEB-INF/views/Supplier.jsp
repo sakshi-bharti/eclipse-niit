@@ -9,7 +9,7 @@
 <title>supplier</title>
 </head>
 <body>
-<h3 align="center">  this is supplier page</h3>
+<h3 align="center"> supplier page</h3>
 <form action="InsertSupplier" method="post">
 <table align ="center"></table>
 <table>

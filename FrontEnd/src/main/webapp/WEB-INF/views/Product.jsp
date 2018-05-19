@@ -9,7 +9,7 @@
 <title>Product</title>
 </head>
 <body>
-	<h3 align="center">this is Product page</h3>
+	<h3 align="center"> Product page</h3>
 	<form:form action="InsertProduct" modelAttribute="product"
 		method="post" enctype="multipart/form-data">
 		<table align="center"></table>
@@ -32,7 +32,7 @@
 			<tr>
 				<td>Category</td>
 				<td><form:select path="categoryId">
-						<form:option value="0" label="Select item." />
+						<form:option value="0" label="Select item."/>
 						<form:options items="${categoryList }" />
 					</form:select></td>
 			</tr>
@@ -81,8 +81,7 @@
 				<td>${product.price}</td>
 				<td>${product.stock}</td>
 				<td>edit/delete</td>
-				<td><img
-					src="<c:url value="/resources/images/${product.productId}.jpg"/>"
+				<td><img src="<c:url value="/resources/images/${product.productId}.jpg"/>"
 					width="50" height="50" /></td>
 				<td><a
 					href="<c:url value='/editProduct,${product.productId}'/>">Edit</a>

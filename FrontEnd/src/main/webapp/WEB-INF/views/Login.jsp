@@ -1,12 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@include file="Header.jsp"%>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login</title>
+<title>Login Page</title>
 <style>
 .error {
 	padding: 15px;
@@ -17,7 +13,6 @@
 	background-color: #f2dede;
 	border-color: #ebccd1;
 }
-
 #login-box {
 	width: 300px;
 	padding: 20px;
@@ -30,30 +25,27 @@
 </style>
 </head>
 <body>
-	<div id="login-box">
-		<h1>
-			<marquee> login page.</marquee>
-		</h1>
-		<form action="login_success" method="post">
-		
-			<table align="center">
-				<tr>
-					<td colspan="2"><center>Login credential</center></td>
-				</tr>
-				<tr>
-					<td>UserName</td>
-					<td><input type="text" name="username" /></td>
-				</tr>
-				<tr>
-					<td>Password</td>
-					<td><input type="password" name="password" /></td>
+<div id="login-box">
+<h3> Login with UserName and Password </h3>
 
-				</tr>
-				<tr>
-					<td colspan="2"><input type="submit" value="SUBMIT" /></td>
-				</tr>
-			</table>
-		</form>
-	</div>
+<form name='loginForm'
+		  action="<c:url value='loginpage' />" method="post">
+
+		  <table>
+			<tr>
+				<td>User:</td>
+				<td><input type="text" name="username" value=''></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" name="password" /></td>
+			</tr>
+			<tr>
+				<td colspan='2'><input name="submit" type="submit"
+					value="submit" /></td>
+			</tr>
+		  </table>
+</form>
+</div>
 </body>
 </html>
