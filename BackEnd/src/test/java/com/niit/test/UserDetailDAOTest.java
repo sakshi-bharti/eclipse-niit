@@ -25,18 +25,18 @@ public class UserDetailDAOTest {
 		
 	}
 	
-	@Ignore
+	
 	@Test
 	public void registerUserTest() {
 		BCryptPasswordEncoder passwordencoder= new BCryptPasswordEncoder();
 		String password = passwordencoder.encode("sa");
 		
 		UserDetail userDetail=new UserDetail();
-		userDetail.setUserName("Tharun");
+		userDetail.setUserName("gudiya");
 		
 		userDetail.setPassword(password);
 		userDetail.setAddress("gaya");
-		userDetail.setRole("ROLE_ADMIN");
+		userDetail.setRole("ROLE_USER");
 		userDetail.setEnabled(true);
 		userDetail.setEmailId("aku11@gmail.com");
 		

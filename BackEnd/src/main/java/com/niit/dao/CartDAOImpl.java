@@ -64,11 +64,11 @@ try {
 	}
 
 @Transactional	
-	public List<Cart> listCartItem() {
+	public List<Cart> listCartItem(String username) {
 	Session session=sessionFactory.openSession();
-	Query query=session.createQuery("from Cart where status=:paidstatus");
+	Query query=session.createQuery("from Cart where status=:paidstatus and username=:username1");
 	query.setParameter("paidstatus","NP");
-	
+	query.setParameter("username1", username);
 	List<Cart> listCartItem = query.list();
 	session.close();
 	return listCartItem;

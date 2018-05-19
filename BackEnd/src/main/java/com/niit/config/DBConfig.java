@@ -17,6 +17,7 @@ import com.niit.dao.CartDAO;
 
 import com.niit.dao.CategoryDAO;
 import com.niit.dao.CategoryDAOImpl;
+import com.niit.dao.OrderDAOImpl;
 import com.niit.dao.ProductDAO;
 import com.niit.dao.ProductDAOImpl;
 import com.niit.dao.SupplierDAO;
@@ -34,6 +35,8 @@ import com.niit.model.UserDetail;
 @Configuration
 @EnableTransactionManagement
 public class DBConfig {
+
+private static final String name = null;
 
 @Bean(name="DataSource")
 	public DataSource getH2DataSource() {
@@ -101,6 +104,12 @@ public UserDetailDAOImpl getUserDetailDAO() {
 		return new CartDAOImpl();
 	}
 	
+	@Bean(name="orderDAO")
+	public OrderDAOImpl getOrderDAO() {
+		System.out.println("orderbean created");
+		return new OrderDAOImpl();
+		
+	}
 
 @Bean(name="txManager")
 public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {

@@ -63,8 +63,9 @@ public class CartDAOTest {
 	
 	@Test
 	public void listCart() {
-		List<Cart> listCart=cartDAO.listCartItem();
 		
-		assertNotNull("problem in retriving",cartDAO.listCartItem());
+		List<Cart> listCart=cartDAO.listCartItem("username");
+		
+		assertNotNull("problem in retriving",listCart);
 	}
 }
